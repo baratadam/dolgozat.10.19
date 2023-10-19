@@ -2,8 +2,9 @@
 
 public class NumberGuesser
 {
-    private int targetNumber;
-    private int attempts = 0;
+    public int targetNumber;
+    private int attempts;
+    
     public bool Guess(int number)
     {
         attempts++;
@@ -19,7 +20,7 @@ public class NumberGuesser
         }
         else
         {
-            Console.WriteLine($"A kitalálandó szám kisebb {number}.");
+            Console.WriteLine($"A kitalálandó szám kisebb mint {number}.");
         }
 
         if (attempts >= 5)
@@ -30,4 +31,5 @@ public class NumberGuesser
 
         return false;
     }
+
 }

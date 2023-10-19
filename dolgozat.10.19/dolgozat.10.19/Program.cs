@@ -3,17 +3,17 @@
 class Program
 {
 
-    static void Main(string[] args)
+    static void Main()
     {
-        {
-            Random random = new Random();
-            int targetNumber = random.Next(10, 100);
-        }
+        var Guesser = new NumberGuesser();
+        Random random = new Random();
+        Guesser.targetNumber = random.Next(10, 99);
 
-        NumberGuesser guesser = new NumberGuesser();
+       
 
         Console.WriteLine("Üdv a számkitaláló játékban!");
         Console.WriteLine("A szám egy kétjegyű szám 10 és 99 között van.");
+        Console.WriteLine("Összesen 5 próbálkozás áll a rendelkezésére");
 
         bool gameOver = false;
 
@@ -22,9 +22,9 @@ class Program
             Console.Write("Tippeld meg a számot: ");
             if (int.TryParse(Console.ReadLine(), out int guess))
             {
-                if (guess >= 10 && guess <= 99)
+                if ( guess >= 10 && guess <= 99)
                 {
-                    gameOver = guesser.Guess(guess);
+                    gameOver = Guesser.Guess(guess);
                 }
                 else
                 {
