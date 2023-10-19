@@ -2,8 +2,14 @@
 
 class Program
 {
+
     static void Main(string[] args)
     {
+        {
+            Random random = new Random();
+            int targetNumber = random.Next(10, 100);
+        }
+
         NumberGuesser guesser = new NumberGuesser();
 
         Console.WriteLine("Üdv a számkitaláló játékban!");
@@ -13,7 +19,7 @@ class Program
 
         while (!gameOver)
         {
-            Console.Write("Tippelj egy számra: ");
+            Console.Write("Tippeld meg a számot: ");
             if (int.TryParse(Console.ReadLine(), out int guess))
             {
                 if (guess >= 10 && guess <= 99)

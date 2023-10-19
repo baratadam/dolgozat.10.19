@@ -4,13 +4,6 @@ public class NumberGuesser
 {
     private int targetNumber;
     private int attempts = 0;
-
-    public NumberGuesser()
-    {
-        Random random = new Random();
-        targetNumber = random.Next(10, 100);
-    }
-
     public bool Guess(int number)
     {
         attempts++;
@@ -22,11 +15,11 @@ public class NumberGuesser
         }
         else if (number < targetNumber)
         {
-            Console.WriteLine($"A kitalálandó szám nagyobb mint{}.");
+            Console.WriteLine($"A kitalálandó szám nagyobb mint {number}.");
         }
         else
         {
-            Console.WriteLine($"A kitalálandó szám kisebb{}.");
+            Console.WriteLine($"A kitalálandó szám kisebb {number}.");
         }
 
         if (attempts >= 5)
